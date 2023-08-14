@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<style>
+
+    div{
+        background-color: rgb(162, 216, 12);
+        margin-top: 10%;
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        border-radius: 25px;
+    }
+    body{
+        background-color: darkolivegreen;
+    }
+</style>
+<body>
+    
+<center>
+    <H1>Wel-Come</H1>
+    <h1 id="home"></h1> <br><br>
+    <button onclick="del()">Clear all <i class="fa-solid fa-ban"></i></button>
+    <button onclick="location.href='dashboard.html'">dashboard <i class="fa-solid fa-ban"></i></button>
+ </center>
+</body>
+<script>
+     function del(){
+  localStorage.clear();
+  home.innerHTML = '';
+     }
+     
+    let name=localStorage.getItem("name");
+    let email=localStorage.getItem("storeduserName");
+    let password= localStorage.getItem("storedpassword");
+    let Mobile_number=localStorage.getItem("Mobile_number");
+    let home=document.getElementById("home");
+    home.innerHTML=` Your name is ${name}<br> your email is ${email} <br> your password is ${password}
+    <br> your mobile Number is ${Mobile_number}`
+
+</script>
+</html>

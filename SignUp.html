@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+  
+</head>
+
+<body>
+    <center>
+        <div>
+        <form>
+            <input id="name" type="text" placeholder="name"><br><br>
+            <input id="email" type="email" placeholder="email"> <br><br>
+            <input id="password" type="password" placeholder="password"><br><br>
+            <input id="Mobile number" type="text" placeholder="Mobile number" maxlength="10"><br><br>
+            Date of birth<input id="date of birth" type="date"><br><br>
+            Gender:
+            <input id="ge" type="radio" name="mal" value="male" checked>male
+            <input id="g1" type="radio" name="mal" value="female" >female
+
+            
+        </form>
+        <button id="Register">Register</button>
+        <h2 id="output"></h2>
+    </div>
+        
+        
+    </center>
+</body>
+<style>
+
+    div{
+        background-color: aquamarine;
+        margin-top: 10%;
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+</style>
+<script>
+    
+    
+  
+
+    document.getElementById("Register").addEventListener("click", function () {
+        // Get the user input value from the user and stored in to the variable
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let Mobile_number = document.getElementById("Mobile number").value;
+        let date = document.getElementById("date of birth").value;
+        let gender = document.querySelector('input[name="mal"]:checked').value;
+        // When the user clicks on the password field, show the message box
+
+    
+
+        // here store the values in to the localstorege by using key and value
+        localStorage.setItem("name",name)
+        localStorage.setItem("storeduserName",email)
+        localStorage.setItem("storedpassword",password)
+        localStorage.setItem("Mobile_number",Mobile_number)
+        localStorage.setItem("date of birth",date)
+        localStorage.setItem("ge",gender)
+        
+        
+        //print the output once after filling all the details 
+        let output = document.getElementById("output");
+        output.innerHTML = `Your name is ${name}:<br> your email is :${email}, <br>your password is : ${password}, <br>
+        and your mobile Number is :${Mobile_number}, <br> your date of birth is: ${date}, <br> your gender is :${gender}\n Registration successfully completed  `
+    });
+</script>
+
+</html>
